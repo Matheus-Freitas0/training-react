@@ -1,11 +1,12 @@
-function Titulo({cor,nome, idade}) {
-    const urlImg = "https://gartic.com.br/imgs/mural/su/supersonic_br/um-desenho-qualquer-5.png"
+import { useState } from "react"
+
+function Titulo({ cor, nome, idade }) {
+    const [texto, setTexto] = useState("Um titulo do estado inicial")
 
     return (
         <div>
-            <h1 style={{color: cor}}>Olá eu sou {nome ? nome: "Fulano"} e tenho {idade ? idade: "indefinido"} anos</h1>
-            <img src={urlImg} width={200}/>
-            <p>Testando Testando Testando</p>
+            <h1 style={{ color: cor }}>{texto}</h1>
+            <button onClick={() =>{ setTexto("Mudei via botão")}}>Meu botão</button>
         </div>
     )
 }
