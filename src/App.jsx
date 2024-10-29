@@ -1,12 +1,8 @@
-import './App.css'
-import Titulo from './Titulo'
+import Home from './pages/Home'
 
 function App() {
   return (
-    <div>
-      < Titulo cor="red" nome="Matheus" idade={18} />
-      < Titulo cor="blue"/>
-    </div>
+    < Home />
   )
 }
 
