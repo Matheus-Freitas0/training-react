@@ -4,8 +4,8 @@ import Titulo from './Titulo'
 function App() {
   return (
     <div>
-      < Titulo nome="Matheus" idade={18} />
-      < Titulo />
+      < Titulo cor="red" nome="Matheus" idade={18} />
+      < Titulo cor="blue"/>
     </div>
   )
 }
