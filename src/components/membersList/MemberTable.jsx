@@ -8,12 +8,13 @@ function MemberTable() {
 
   useEffect(() => {
     axios.get('/members/api/all')
-  .then(response => {
-      console.log('Dados recebidos:', response.data);
-  })
-  .catch(error => {
-      console.error('Erro ao obter dados:', error);
-  });
+      .then(response => {
+        console.log('Dados recebidos:', response.data);
+        setMembers(response.data); 
+      })
+      .catch(error => {
+        console.error('Erro ao obter dados:', error);
+      });
   }, []);
 
   return (

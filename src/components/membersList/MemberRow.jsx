@@ -4,10 +4,10 @@ function MemberRow({ member }) {
   return (
     <tr>
       <td>{member.name}</td>
-      <td>{member.employee}</td>
+      <td>{member.employee ? 'Yes' : 'No'}</td>
       <td>{member.assignment}</td>
       <td>{member.document}</td>
-      <td className='btns'>
+      <td className="btns">
         <button className="btn btn-primary">Edit</button>
         <button className="btn btn-danger">Delete</button>
       </td>
