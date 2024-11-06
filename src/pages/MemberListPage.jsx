@@ -1,8 +1,9 @@
+import Header from "../components/members/header"
 
 function MemberListPage() {    
     return (
         <div>
-            <h1>Member List</h1>
+            <Header />
         </div>
     )
 }
