@@ -3,7 +3,7 @@ import Header from "../components/membersRegister/Header"
 function MemberRegisterPage() {
     
     return (
-        <div className="container">
+        <div>
             <Header />
         </div>
     )
