@@ -1,5 +1,5 @@
-import MemberRow from './MemberRow';
-import './MemberTable.css'
+import MemberRow from "./MemberRow";
+import "./MemberTable.css";
 
 function MemberTable() {
   return (
@@ -8,10 +8,7 @@ function MemberTable() {
         <div class="col-md-12 mb-5">
           <div class="d-flex inline mb-2">
             <h2 class="col">Members</h2>
-            <a
-              class="btn-new-member btn btn-primary btn-lg"
-              href="/register"
-            >
+            <a class="btn-new-member btn btn-primary btn-lg" href="/register">
               New Member
             </a>
           </div>
@@ -21,10 +18,13 @@ function MemberTable() {
                 <th scope="col">Name</th>
                 <th scope="col">Employee</th>
                 <th scope="col">Assignment</th>
+                <th scope="col">Document</th>
                 <th scope="col">Actions</th>
               </tr>
             </thead>
-            <MemberRow />
+            <tbody>
+                <MemberRow  />
+            </tbody>
           </table>
         </div>
       </div>
