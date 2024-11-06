@@ -1,3 +1,4 @@
+import MemberRow from './MemberRow';
 import './MemberTable.css'
 
 function MemberTable() {
@@ -23,7 +24,7 @@ function MemberTable() {
                 <th scope="col">Actions</th>
               </tr>
             </thead>
-            <tbody id="member-list" class="lists"></tbody>
+            <MemberRow />
           </table>
         </div>
       </div>

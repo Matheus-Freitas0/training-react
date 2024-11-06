@@ -9,7 +9,6 @@ function MemberListPage() {
             <Header />
             <Alert />
             <MemberTable />
-            <MemberRow />
         </div>
     )
 }
