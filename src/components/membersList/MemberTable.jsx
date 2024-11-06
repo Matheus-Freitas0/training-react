@@ -1,18 +1,32 @@
 import MemberRow from "./MemberRow";
 import "./MemberTable.css";
+import { useState, useEffect } from "react";
+import axios from 'axios';
 
 function MemberTable() {
+  const [members, setMembers] = useState([]);
+
+  useEffect(() => {
+    axios.get('/members/api/all')
+  .then(response => {
+      console.log('Dados recebidos:', response.data);
+  })
+  .catch(error => {
+      console.error('Erro ao obter dados:', error);
+  });
+  }, []);
+
   return (
-    <div class="container">
-      <div class="row mt-4">
-        <div class="col-md-12 mb-5">
-          <div class="d-flex inline mb-2">
-            <h2 class="col">Members</h2>
-            <a class="btn-new-member btn btn-primary btn-lg" href="/register">
+    <div className="container">
+      <div className="row mt-4">
+        <div className="col-md-12 mb-5">
+          <div className="d-flex inline mb-2">
+            <h2 className="col">Members</h2>
+            <a className="btn-new-member btn btn-primary btn-lg" href="/register">
               New Member
             </a>
           </div>
-          <table class="table table-striped table-hover table-borderless">
+          <table className="table table-striped table-hover table-borderless">
             <thead>
               <tr>
                 <th scope="col">Name</th>
@@ -23,7 +37,9 @@ function MemberTable() {
               </tr>
             </thead>
             <tbody>
-                <MemberRow  />
+              {members.map((member) => (
+                <MemberRow key={member.id} member={member} />
+              ))}
             </tbody>
           </table>
         </div>
