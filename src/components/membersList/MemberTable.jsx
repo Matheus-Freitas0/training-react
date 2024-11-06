@@ -6,7 +6,7 @@ function MemberTable() {
       <div class="row mt-4">
         <div class="col-md-12 mb-5">
           <div class="d-flex inline mb-2">
-            <h2 class="col">Member</h2>
+            <h2 class="col">Members</h2>
             <a
               class="btn-new-member btn btn-primary btn-lg"
               href="/register"
