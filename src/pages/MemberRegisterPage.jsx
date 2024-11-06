@@ -1,9 +1,10 @@
+import Header from "../components/membersRegister/Header"
 
 function MemberRegisterPage() {
     
     return (
         <div className="container">
-            <h1>Register</h1>
+            <Header />
         </div>
     )
 }
