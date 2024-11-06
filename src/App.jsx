@@ -1,22 +1,23 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./pages/Home";
-import Sobre from "./pages/Sobre";
-import Contato from "./pages/Contato";
-import MemberContainer from "./pages/members/MemberContainer";
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import MemberListPage from './pages/MemberListPage';
+import MemberRegisterPage from './pages/MemberRegisterPage';
 
-function App() {
-  return (
-    <div>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/sobre" element={<Sobre />} />
-          <Route path="/contato" element={<Contato />} />
-          <Route path="/members" element={<MemberContainer />} />
-        </Routes>
-      </BrowserRouter>
-    </div>
-  );
-}
+const App = () => (
+    <Router>
+        <div>
+            <nav>
+                <ul>
+                    <li><Link to="/">Member List</Link></li>
+                    <li><Link to="/register">Register Member</Link></li>
+                </ul>
+            </nav>
+            <Routes>
+                <Route path="/" element={<MemberListPage />} />
+                <Route path="/register" element={<MemberRegisterPage />} />
+            </Routes>
+        </div>
+    </Router>
+);
 
 export default App;
