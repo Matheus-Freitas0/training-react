@@ -5,12 +5,10 @@ import MemberRegisterPage from './pages/MemberRegisterPage';
 
 const App = () => (
     <Router>
-        <div>
             <Routes>
                 <Route path="/" element={<MemberListPage />} />
                 <Route path="/register" element={<MemberRegisterPage />} />
             </Routes>
-        </div>
     </Router>
 );
 

@@ -1,6 +1,12 @@
+import axios from "axios";
 import "./MemberTable.css";
 
 function MemberRow({ member }) {
+
+  function DeleteMember(id) {
+    axios.delete('')
+  }
+
   return (
     <tr>
       <td>{member.name}</td>
@@ -8,8 +14,7 @@ function MemberRow({ member }) {
       <td>{member.assignment}</td>
       <td>{member.document}</td>
       <td className="btns">
-        <button className="btn btn-primary">Edit</button>
-        <button className="btn btn-danger">Delete</button>
+        <button className="btn btn-primary" onClick={()=>DeleteMember(member.id)}>Edit</button>
       </td>
     </tr>
   );
