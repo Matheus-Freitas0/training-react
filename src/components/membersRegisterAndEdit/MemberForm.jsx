@@ -1,6 +1,5 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import InputMask from "react-input-mask";
 import "./MemberForm.css";
 import axios from "axios";
 
@@ -93,8 +92,7 @@ function MemberForm() {
 
           <div className="form-group">
             <label htmlFor="document">Document</label>
-            <InputMask
-              mask="999.999.999-99"
+            <input
               type="text"
               id="document"
               value={member.document}
