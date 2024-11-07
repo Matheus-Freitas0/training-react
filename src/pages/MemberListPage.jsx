@@ -1,5 +1,5 @@
-import Header from "../components/membersList/header"
-import MemberTable from "../components/membersList/MemberTable"
+import Header from "../components/memberList/header"
+import MemberTable from "../components/memberList/MemberTable"
 
 function MemberListPage() {    
     return (

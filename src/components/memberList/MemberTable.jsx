@@ -1,19 +1,13 @@
 import MemberRow from "./MemberRow";
 import "./MemberTable.css";
 import { useState, useEffect } from "react";
-import axios from 'axios';
+import { getMembers } from "../../services/memberService";
 
 function MemberTable() {
   const [members, setMembers] = useState([]);
 
   useEffect(() => {
-    axios.get('/members/api/all')
-      .then(response => {
-        setMembers(response.data); 
-      })
-      .catch(error => {
-        console.error('Erro ao obter dados:', error);
-      });
+    (async () => setMembers(await getMembers()))();
   }, []);
 
   return (
@@ -22,7 +16,10 @@ function MemberTable() {
         <div className="col-md-12 mb-5">
           <div className="d-flex inline mb-2">
             <h2 className="col">Members</h2>
-            <a className="btn-new-member btn btn-primary btn-lg" href="/register">
+            <a
+              className="btn-new-member btn btn-primary btn-lg"
+              href="/register"
+            >
               New Member
             </a>
           </div>
@@ -32,7 +29,9 @@ function MemberTable() {
                 <th scope="col">Name</th>
                 <th scope="col">Employee</th>
                 <th scope="col">Assignment</th>
-                <th scope="col" className="d-none d-sm-table-cell">Document</th>
+                <th scope="col" className="d-none d-sm-table-cell">
+                  Document
+                </th>
                 <th scope="col">Actions</th>
               </tr>
             </thead>

@@ -1,4 +1,3 @@
-import axios from "axios";
 import "./MemberTable.css";
 
 function MemberRow({ member }) {
