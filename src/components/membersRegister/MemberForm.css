@@ -5,8 +5,11 @@ main {
     border: 2px solid #3147c4;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     max-width: 800px;
-    margin: 2rem auto 0; 
+    margin: 2rem auto;
     font-family: 'Arial', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #project-title {
@@ -19,12 +22,12 @@ main {
     text-align: center;
     letter-spacing: 1px;
 }
-
 .form-label {
     color: #3147c4;
     font-weight: bold;
     margin-bottom: 0.5rem;
     transition: color 0.3s ease;
+    display: inline-block;
 }
 
 .form-label:hover {
@@ -38,6 +41,12 @@ main {
     padding: 0.75rem;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
     font-size: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.form-control::placeholder {
+    color: #a0a4ab;
+    opacity: 0.8;
 }
 
 .form-control:focus,
@@ -52,24 +61,29 @@ main {
     color: white;
     font-size: 1.1rem;
     font-weight: bold;
+    background-color: #4169e1;
+    border: none;
+    border-radius: 8px;
     transition: background-color 0.3s ease, transform 0.2s, box-shadow 0.3s ease;
-    background-color: #4169e1; 
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    background-color: #365e9d; 
+    background-color: #365e9d;
 }
 
 button[type="submit"] {
     margin-top: 1.5rem;
-    width: 100%; 
+    width: 100%;
     font-size: 1.1rem;
 }
 
 .row {
     margin-bottom: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
 textarea.form-control {
@@ -83,12 +97,23 @@ textarea.form-control:focus {
     box-shadow: 0 0 0 0.2rem rgba(46, 76, 143, 0.25);
 }
 
-.form-control,
-.form-select {
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+.form-check-input {
+    margin-right: 0.5rem;
+    accent-color: #3147c4;
+    width: 1.2rem;
+    height: 1.2rem;
+    cursor: pointer;
 }
 
-.form-control:focus,
-.form-select:focus {
-    transition: all 0.3s ease;
+.form-check-input:focus {
+    outline: 2px solid rgba(49, 71, 196, 0.3);
+}
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+    }
+
+    .btn-primary {
+        font-size: 1rem;
+    }
 }
