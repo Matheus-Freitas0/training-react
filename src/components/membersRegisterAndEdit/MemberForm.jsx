@@ -29,7 +29,6 @@ function MemberForm() {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (id) {
-
       axios.put('http://192.168.15.12:8080/members/api', {
         id: member.id, 
         employee: member.employee, 
@@ -59,7 +58,6 @@ function MemberForm() {
     }
   };
 
-
   return (
     <div className="member-form-container">
       <div className="form-wrapper">
@@ -75,6 +73,7 @@ function MemberForm() {
               onChange={e => setMember({ ...member, name: e.target.value })}
               placeholder="Enter member name"
               required
+              disabled={id}  
             />
           </div>
 
@@ -99,6 +98,7 @@ function MemberForm() {
               onChange={e => setMember({ ...member, document: e.target.value })}
               placeholder="Enter document number"
               required
+              disabled={id}  
             />
           </div>
 
