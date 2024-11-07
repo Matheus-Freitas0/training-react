@@ -62,67 +62,64 @@ function MemberForm() {
 
 
   return (
-    <main className="member-form-container">
+    <div className="member-form-container">
       <div className="form-wrapper">
-        <h2 className="form-title">{id ? "Edit Member" : "Member Registration"}</h2>
+        <h2>{id ? "Edit Member" : "Member Registration"}</h2>
 
-        <form id="registrationForm" className="registration-form">
-          <div className="form-row">
-            <div className="form-group">
-              <label htmlFor="member-name" className="form-label">
-                Member Name
-              </label>
-              <input
-                type="text"
-                className="form-input"
-                id="member-name"
-                placeholder="Enter member name"
-                required
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="assignment" className="form-label">
-                Assignment
-              </label>
-              <input
-                type="text"
-                className="form-input"
-                id="assignment"
-                placeholder="Enter assignment"
-                required
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="document" className="form-label">
-                Document
-              </label>
-              <InputMask
-                mask="999.999.999-99"
-                type="text"
-                className="form-input"
-                id="document"
-                placeholder="Enter document number"
-                required
-              />
-            </div>
+        <form onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label htmlFor="member-name">Member Name</label>
+            <input
+              type="text"
+              id="member-name"
+              value={member.name}
+              onChange={e => setMember({ ...member, name: e.target.value })}
+              placeholder="Enter member name"
+              required
+            />
+          </div>
 
-            <div className="form-group checkbox-group">
+          <div className="form-group">
+            <label htmlFor="assignment">Assignment</label>
+            <input
+              type="text"
+              id="assignment"
+              value={member.assignment}
+              onChange={e => setMember({ ...member, assignment: e.target.value })}
+              placeholder="Enter assignment"
+              required
+            />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="document">Document</label>
+            <InputMask
+              mask="999.999.999-99"
+              type="text"
+              id="document"
+              value={member.document}
+              onChange={e => setMember({ ...member, document: e.target.value })}
+              placeholder="Enter document number"
+              required
+            />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="is-employee">
               <input
                 type="checkbox"
-                className="form-checkbox"
                 id="is-employee"
+                checked={member.employee}
+                onChange={e => setMember({ ...member, employee: e.target.checked })}
               />
-              <label htmlFor="is-employee" className="form-checkbox-label">
-                Employee
-              </label>
-            </div>
+              Employee
+            </label>
           </div>
-          <button type="submit" className="submit-button">
-            Register Member
-          </button>
+
+          <button type="submit">{id ? 'Update Member' : 'Register Member'}</button>
         </form>
       </div>
-    </main>
+    </div>
   );
 }
 
