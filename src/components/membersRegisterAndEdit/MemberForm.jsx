@@ -16,7 +16,7 @@ function MemberForm() {
   useEffect(() => {
     if (id) {
       axios
-        .get(`http://192.168.15.12:8080/members/api/${id}`)
+        .get(`/members/api/${id}`)
         .then((response) => {
           setMember(response.data);
         })
@@ -29,7 +29,7 @@ function MemberForm() {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (id) {
-      axios.put('http://192.168.15.12:8080/members/api', {
+      axios.put(`/members/api/`, {
         id: member.id, 
         employee: member.employee, 
         assignment: member.assignment 
@@ -42,7 +42,7 @@ function MemberForm() {
         console.error("Error updating member:", error);
       });
     } else {
-      axios.post('http://192.168.15.12:8080/members/api/create', {
+      axios.post(`/members/api/create`, {
         name: member.name, 
         employee: member.employee,
         assignment: member.assignment, 
