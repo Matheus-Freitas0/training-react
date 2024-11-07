@@ -2,65 +2,61 @@ import "./MemberForm.css";
 
 function MemberForm(id) {
   return (
-    <main>
-      <div className="container my-12">
-        <h2 className="text-center mb-4" id="project-title">
-          Member Registration
-        </h2>
-        <form id="registrationForm">
-          <div className="row">
-            <div className="col-md-6 mb-3">
+    <main className="member-form-container">
+      <div className="form-wrapper">
+        <h2 className="form-title">Member Registration</h2>
+
+        <form id="registrationForm" className="registration-form">
+          <div className="form-row">
+            <div className="form-group">
               <label htmlFor="member-name" className="form-label">
                 Member Name
               </label>
               <input
                 type="text"
-                className="form-control"
+                className="form-input"
                 id="member-name"
-                placeholder="Member name"
+                placeholder="Enter member name"
                 required
               />
             </div>
-            <div className="col-md-6 mb-3">
+            <div className="form-group">
               <label htmlFor="assignment" className="form-label">
                 Assignment
               </label>
               <input
                 type="text"
-                className="form-control"
+                className="form-input"
                 id="assignment"
-                placeholder="Assignment..."
+                placeholder="Enter assignment"
                 required
               />
             </div>
-          </div>
-
-          <div className="row">
-            <div className="col-md-6 mb-3">
+            <div className="form-group">
               <label htmlFor="document" className="form-label">
                 Document
               </label>
               <input
                 type="text"
-                className="form-control"
+                className="form-input"
                 id="document"
-                placeholder="Document number..."
+                placeholder="Enter document number"
                 required
               />
             </div>
 
-            <div className="checkbox col-md-6 mb-3">
-              <label htmlFor="is-employee" className="form-label">
-                Employee
-              </label>
+            <div className="form-group checkbox-group">
               <input
                 type="checkbox"
-                className="form-check-input"
+                className="form-checkbox"
                 id="is-employee"
               />
+              <label htmlFor="is-employee" className="form-checkbox-label">
+                Employee
+              </label>
             </div>
           </div>
-          <button type="submit" id="submitButton" className="btn btn-primary">
+          <button type="submit" className="submit-button">
             Register Member
           </button>
         </form>
