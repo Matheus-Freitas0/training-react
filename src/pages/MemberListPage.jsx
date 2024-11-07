@@ -6,7 +6,6 @@ function MemberListPage() {
     return (
         <div>
             <Header />
-            <Alert />
             <MemberTable />
         </div>
     )
