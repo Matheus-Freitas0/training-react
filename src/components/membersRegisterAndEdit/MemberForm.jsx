@@ -1,7 +1,19 @@
-import "./MemberForm.css";
+import { useParams, useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import InputMask from 'react-input-mask';
+import "./MemberForm.css";
 
-function MemberForm(id) {
+function MemberForm() {
+
+  const { id } = useParams()
+  const navigate = useNavigate()
+  const [member, setMember] = useState({
+    name: '',
+    assignment: '',
+    document: '',
+    employee: false
+    })
+
   return (
     <main className="member-form-container">
       <div className="form-wrapper">
