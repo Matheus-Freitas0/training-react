@@ -35,7 +35,6 @@ function MemberForm() {
         assignment: member.assignment 
       })
       .then(response => {
-        console.log("Member updated:", response.data);
         navigate('/'); 
       })
       .catch(error => {
@@ -49,7 +48,6 @@ function MemberForm() {
         document: member.document, 
       })
       .then(response => {
-        console.log("New member created:", response.data);
         navigate('/'); 
       })
       .catch(error => {

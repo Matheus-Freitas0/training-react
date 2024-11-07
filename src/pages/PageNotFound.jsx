@@ -1,8 +1,10 @@
+import NotFound from "../components/pageNotFound/NotFound"
 
 function PageNotFound() {
+  return (
     <div>
-        <h1>404 - Página Não Encontrada</h1>
-    <p>A página que você está procurando não existe.</p>
-  </div>
+        <NotFound />
+    </div>
+  )
 }
 export default PageNotFound
