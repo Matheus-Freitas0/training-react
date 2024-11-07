@@ -9,7 +9,6 @@ function MemberTable() {
   useEffect(() => {
     axios.get('/members/api/all')
       .then(response => {
-        console.log('Dados recebidos:', response.data);
         setMembers(response.data); 
       })
       .catch(error => {
@@ -33,7 +32,7 @@ function MemberTable() {
                 <th scope="col">Name</th>
                 <th scope="col">Employee</th>
                 <th scope="col">Assignment</th>
-                <th scope="col">Document</th>
+                <th scope="col" className="d-none d-sm-table-cell">Document</th>
                 <th scope="col">Actions</th>
               </tr>
             </thead>
