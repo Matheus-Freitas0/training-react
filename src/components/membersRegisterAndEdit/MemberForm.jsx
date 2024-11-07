@@ -35,7 +35,7 @@ function MemberForm() {
         assignment: member.assignment 
       })
       .then(response => {
-        navigate('/'); 
+        navigate('/', { state: { success: true } });
       })
       .catch(error => {
         console.error("Error updating member:", error);
@@ -48,7 +48,7 @@ function MemberForm() {
         document: member.document, 
       })
       .then(response => {
-        navigate('/'); 
+        navigate('/', { state: { success: true } });
       })
       .catch(error => {
         console.error("Error creating member:", error);
