@@ -1,4 +1,5 @@
 import "./MemberForm.css";
+import InputMask from 'react-input-mask';
 
 function MemberForm(id) {
   return (
@@ -36,7 +37,8 @@ function MemberForm(id) {
               <label htmlFor="document" className="form-label">
                 Document
               </label>
-              <input
+              <InputMask
+                mask="999.999.999-99"
                 type="text"
                 className="form-input"
                 id="document"
