@@ -1,6 +1,9 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import InputMask from "react-input-mask";  
+import InputMask from "react-input-mask";
+import { getMemberById } from "../../services/memberGetBy";
+import { getMemberById } from "../../services/memberGetBy";
+import { getMemberById } from "../../services/memberGetBy";
 import "./MemberForm.css";
 import axios from "axios";
 
@@ -16,44 +19,22 @@ function MemberForm() {
 
   useEffect(() => {
     if (id) {
-      axios
-        .get(`/members/api/${id}`)
-        .then((response) => {
-          setMember(response.data);
-        })
-        .catch((error) => {
-          console.error("Error fetching member data:", error);
-        });
+      getMemberById(id)
+        .then((data) => setMember(data))
+        .catch((error) => console.error("Error fetching member:", error));
     }
   }, [id]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
     if (id) {
-      axios.put(`/members/api/`, {
-        id: member.id, 
-        employee: member.employee, 
-        assignment: member.assignment 
-      })
-      .then(response => {
-        navigate('/', { state: { success: true } });
-      })
-      .catch(error => {
-        console.error("Error updating member:", error);
-      });
+      updateMember(member)
+        .then(() => navigate('/', { state: { success: true } }))
+        .catch((error) => console.error("Error updating member:", error));
     } else {
-      axios.post(`/members/api/create`, {
-        name: member.name, 
-        employee: member.employee,
-        assignment: member.assignment, 
-        document: member.document, 
-      })
-      .then(response => {
-        navigate('/', { state: { success: true } });
-      })
-      .catch(error => {
-        console.error("Error creating member:", error);
-      });
+      createMember(member)
+        .then(() => navigate('/', { state: { success: true } }))
+        .catch((error) => console.error("Error creating member:", error));
     }
   };
 

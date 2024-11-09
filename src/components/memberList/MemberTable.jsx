@@ -1,13 +1,13 @@
 import MemberRow from "./MemberRow";
 import "./MemberTable.css";
 import { useState, useEffect } from "react";
-import { getMembers } from "../../services/memberGetAll";
+import { getMembersAll } from "../../services/memberGetAll";
 
 function MemberTable() {
   const [members, setMembers] = useState([]);
 
   useEffect(() => {
-    (async () => setMembers(await getMembers()))();
+    (async () => setMembers(await getMembersAll()))();
   }, []);
 
   return (
