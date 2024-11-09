@@ -21,7 +21,6 @@ function MemberForm() {
     if (id) {
       getMemberById(id)
         .then((data) => setMember(data))
-        .catch((error) => console.error("Error fetching member:", error));
     }
   }, [id]);
 
@@ -30,11 +29,10 @@ function MemberForm() {
     if (id) {
       updateMember(member)
         .then(() => navigate('/', { state: { success: true } }))
-        .catch((error) => console.error("Error updating member:", error));
+        
     } else {
       createMember(member)
         .then(() => navigate('/', { state: { success: true } }))
-        .catch((error) => console.error("Error creating member:", error));
     }
   };
 
