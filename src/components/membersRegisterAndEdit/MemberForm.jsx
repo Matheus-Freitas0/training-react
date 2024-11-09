@@ -2,10 +2,9 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import InputMask from "react-input-mask";
 import { getMemberById } from "../../services/memberGetBy";
-import { getMemberById } from "../../services/memberGetBy";
-import { getMemberById } from "../../services/memberGetBy";
+import { memberUpdate } from "../../services/memberUpdate";
+import { memberCreate } from "../../services/memberCreate";
 import "./MemberForm.css";
-import axios from "axios";
 
 function MemberForm() {
   const { id } = useParams();
@@ -27,11 +26,11 @@ function MemberForm() {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (id) {
-      updateMember(member)
+      memberUpdate(member)
         .then(() => navigate('/', { state: { success: true } }))
         
     } else {
-      createMember(member)
+      memberCreate(member)
         .then(() => navigate('/', { state: { success: true } }))
     }
   };

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const createMember = async (member) => {
+export const memberCreate = async (member) => {
     try {
         await axios.post(`/members/api/create`, {
             name: member.name,

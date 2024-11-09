@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-export const updateMember = async (member) => {
+export const memberUpdate = async (member) => {
     try {
-        await axios.put(`/members/api/`, {
+        await axios.put(`/members/api/update`, {
             id: member.id,
             employee: member.employee,
             assignment: member.assignment,
