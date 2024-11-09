@@ -1,7 +1,7 @@
 import MemberRow from "./MemberRow";
 import "./MemberTable.css";
 import { useState, useEffect } from "react";
-import { getMembers } from "../../services/memberService";
+import { getMembers } from "../../services/memberGetAll";
 
 function MemberTable() {
   const [members, setMembers] = useState([]);

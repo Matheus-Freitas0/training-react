@@ -1,5 +1,5 @@
 import { useLocation } from "react-router-dom";
-import Header from "../components/memberList/header";
+import Header from "../components/memberList/Header";
 import MemberTable from "../components/memberList/MemberTable";
 import Alert from "../components/memberList/Alert"; 
 
