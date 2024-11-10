@@ -13,7 +13,7 @@ Aqui você encontrará:
 - **Estilização**: Uso de CSS, styled-components e frameworks de estilização no React.
 - **Boas Práticas**: Aplicação de boas práticas de desenvolvimento e organização de código.
 
-##Complemento do codigo
+## Complemento do codigo
 
 Este sistema se intregra com uma API externa que possui CRUD de membros, o codigo em react possui duas paginas, uma de listagem e outra de registro e edição utilizando o CRUD por meio de URL enviado do backend. 
 
